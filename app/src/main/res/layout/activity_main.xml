@@ -11,26 +11,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="默认图标"
+        app:layout_constraintBottom_toTopOf="@id/btn_2018_christmas"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_new"
+        android:id="@+id/btn_2018_christmas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="新图标"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="2018圣诞节"
+        app:layout_constraintBottom_toTopOf="@id/btn_2019_year"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_default" />
+
     <Button
-        android:id="@+id/btn_dis"
+        android:id="@+id/btn_2019_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="只禁用"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="2019新年"
+        app:layout_constraintBottom_toTopOf="@id/btn_all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_2018_christmas" />
+
+    <Button
+        android:id="@+id/btn_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全显示"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_2019_year" />
+
+    <!--<Button-->
+    <!--android:id="@+id/btn_dis"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="只禁用"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent" />-->
 
 
 </android.support.constraint.ConstraintLayout>

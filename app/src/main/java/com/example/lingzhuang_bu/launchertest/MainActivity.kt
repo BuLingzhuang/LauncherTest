@@ -1,54 +1,57 @@
 package com.example.lingzhuang_bu.launchertest
 
+import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.pm.PackageManager
 import android.content.ComponentName
-import android.util.Log
 
 import kotlinx.android.synthetic.main.activity_main.*
-import org.json.JSONObject
 
 
-class MainActivity : AppCompatActivity() {
+@SuppressLint("Registered")
+open class MainActivity : AppCompatActivity() {
 
     private lateinit var defaultComponent: ComponentName
-    private lateinit var testComponent: ComponentName
+    private val componentList = ArrayList<ComponentName>()
+    private val launcherPath = "com.example.lingzhuang_bu.launchertest"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //拿到当前activity注册的组件名称
-        val componentName = componentName
-
-        //拿到我们注册的MainActivity组件
-        defaultComponent = ComponentName("com.example.lingzhuang_bu.launchertest", "com.example.lingzhuang_bu.launchertest.MainActivity")  //拿到默认的组件
-        //拿到我注册的别名test组件
-        testComponent = ComponentName("com.example.lingzhuang_bu.launchertest", "com.example.lingzhuang_bu.launchertest.test")
+        defaultComponent = ComponentName(launcherPath, "com.example.lingzhuang_bu.launchertest.DefaultActivity")
+        componentList.add(ComponentName(launcherPath, "com.example.lingzhuang_bu.launchertest.PremiumActivity"))
+        componentList.add(ComponentName(launcherPath, "com.example.lingzhuang_bu.launchertest.PrestigeActivity"))
+        componentList.add(ComponentName(launcherPath, "com.example.lingzhuang_bu.launchertest.Default2018ChristmasActivity"))
+        componentList.add(ComponentName(launcherPath, "com.example.lingzhuang_bu.launchertest.Premium2018ChristmasActivity"))
+        componentList.add(ComponentName(launcherPath, "com.example.lingzhuang_bu.launchertest.Prestige2018ChristmasActivity"))
+        componentList.add(ComponentName(launcherPath, "com.example.lingzhuang_bu.launchertest.Default2019YearActivity"))
+        componentList.add(ComponentName(launcherPath, "com.example.lingzhuang_bu.launchertest.Premium2019YearActivity"))
+        componentList.add(ComponentName(launcherPath, "com.example.lingzhuang_bu.launchertest.Prestige2019YearActivity"))
 
         btn_default.setOnClickListener { changeDefaultIcon() }
-        btn_new.setOnClickListener { changeIcon() }
-        btn_dis.setOnClickListener {
-//            disableComponent(defaultComponent)
-            val jsonObject = JSONObject("null346232626")
-            Log.e("bbb",jsonObject.toString())
+        btn_2018_christmas.setOnClickListener { showSpecIcon(2, 3, 4) }
+        btn_2019_year.setOnClickListener { showSpecIcon(5, 6, 7) }
+        btn_all.setOnClickListener { showAllIcon() }
+    }
+
+    fun showAllIcon() {
+        for (componentName in componentList) {
+            enableComponent(componentName)
         }
     }
 
-    fun changeIcon() {
-        disableComponent(defaultComponent)
-        enableComponent(testComponent)
+    fun showSpecIcon(vararg numList: Int) {
+        for (num in numList) {
+            enableComponent(componentList[num])
+        }
     }
 
     fun changeDefaultIcon() {
-        enableComponent(defaultComponent)
-        disableComponent(testComponent)
-    }
-
-    override fun onDestroy() {
-        changeIcon()
-        super.onDestroy()
+        for (componentName in componentList) {
+            disableComponent(componentName)
+        }
     }
 
     /**

@@ -4,14 +4,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_cs"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:label="改变前">
+            android:name=".DefaultActivity"
+            android:icon="@mipmap/ic_launcher_cs"
+            android:label="Test">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,20 +19,102 @@
             </intent-filter>
         </activity>
 
-        <activity-alias
-            android:name=".test"
-            android:enabled="false"
-            android:icon="@mipmap/icon"
-            android:label="改变后"
-            android:targetActivity=".MainActivity">
+        <activity
+            android:name=".PremiumActivity"
+            android:enabled="true"
+            android:icon="@mipmap/ic_launcher_premium"
+            android:label="Test_premium">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity-alias>
+        </activity>
 
-        <activity android:name=".Main2Activity"></activity>
+        <activity
+            android:name=".PrestigeActivity"
+            android:enabled="true"
+            android:icon="@mipmap/ic_launcher_prestige"
+            android:label="Test_prestige">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Default2018ChristmasActivity"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_cs_2018_christmas"
+            android:label="Test">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Premium2018ChristmasActivity"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_premium_2018_christmas"
+            android:label="Test_premium">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Prestige2018ChristmasActivity"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_prestige_2018_christmas"
+            android:label="Test_prestige">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Default2019YearActivity"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_cs_2019_year"
+            android:label="Test">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Premium2019YearActivity"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_premium_2019_year"
+            android:label="Test_premium">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Prestige2019YearActivity"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_prestige_2019_year"
+            android:label="Test_prestige">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
